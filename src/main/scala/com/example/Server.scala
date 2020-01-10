@@ -39,7 +39,7 @@ class Hello extends Service[HttpRequest, HttpResponse] {
 
     RelativisticModel.select()
     val m = Amount.valueOf("12 GeV").to(KILOGRAM)
-    response.setContentString("E=mc^2: 12 GeV = " + m)
+    response.setContentString("Hi there: E=mc^2: 12 GeV = " + m)
 
     Future(response)
   }
