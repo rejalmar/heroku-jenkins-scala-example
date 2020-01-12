@@ -12,11 +12,6 @@ import java.net.URI
 import java.sql.Connection
 import java.sql.DriverManager
 
-import javax.measure.unit.SI.KILOGRAM
-import javax.measure.quantity.Mass
-import org.jscience.physics.model.RelativisticModel
-import org.jscience.physics.amount.Amount
-
 object Server {
   def main(args: Array[String]) {
     val port = Properties.envOrElse("PORT", "8085").toInt
@@ -80,8 +75,9 @@ class Hello extends Service[HttpRequest, HttpResponse] {
   def showHome(request: HttpRequest): Future[HttpResponse] = {
     val response = Response()
 
-    RelativisticModel.select()
-    val m = Amount.valueOf("12 GeV").to(KILOGRAM)
+//    RelativisticModel.select()
+//    val m = Amount.valueOf("12 GeV").to(KILOGRAM)
+    val m = "random text"
     response.setContentString("Hi there: E=mc^2: 12 GeV = " + m)
 
     Future(response)
